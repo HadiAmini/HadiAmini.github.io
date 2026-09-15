@@ -129,3 +129,28 @@ dialog{color:var(--ink)}dialog::backdrop{background:#11232bdd;backdrop-filter:bl
 .home-media-ribbon.is-media-animated .media-logo-link:focus-visible{outline-offset:-3px}
 @media(max-width:760px){.home-media-ribbon-body{gap:8px}.home-media-ribbon.is-media-animated .media-logo-set{gap:24px;padding-right:24px}.home-media-ribbon.is-media-animated .media-logo-link{flex-basis:128px;width:128px;min-height:48px}.home-media-ribbon.is-media-animated .media-logo-link img{max-height:28px}}
 @media print{.media-motion-toggle{display:none!important}.home-media-ribbon.is-media-animated .home-media-logo-marquee{overflow:visible}.home-media-ribbon.is-media-animated .media-logo-track{display:block;width:100%}.home-media-ribbon.is-media-animated .media-logo-set{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:12px;padding:0}.home-media-ribbon.is-media-animated .media-logo-link{width:auto;min-height:48px;padding:6px 3px}.home-media-ribbon .media-logo-set[aria-hidden="true"]{display:none!important}}
+
+/* Small CV and paper links: scoped additions; existing site styles are unchanged. */
+
+.profile-cv-note{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+.profile-cv-note-label{font-weight:600;color:var(--ink-soft)}
+.profile-cv-note-link{display:inline-flex;align-items:center;gap:7px;color:var(--teal);font-weight:600;text-decoration:none;border-bottom:0;padding-bottom:1px}
+.profile-cv-note-link:hover{opacity:.9}
+.profile-cv-note-icon{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border:1px solid currentColor;border-radius:999px;font-size:11px;line-height:1;transform:translateY(-.5px)}
+.research-record-link{margin-left:2px;white-space:nowrap}
+@media(max-width:760px){.profile-cv-note{font-size:12px;gap:6px 8px;margin-top:10px}.profile-cv-note-icon{width:17px;height:17px;font-size:10px}}
+.profile-cv-caption{padding:7px 2px 1px;font-size:13px;line-height:1.5;text-align:left}
+.profile-cv-link{display:inline-block;padding:4px 0;color:var(--teal);font-weight:500;text-underline-offset:3px;text-decoration:underline;text-decoration-thickness:1px}
+.profile-cv-link:hover{text-decoration-thickness:2px}
+.paper-link{display:inline-block;color:var(--teal);font-size:.92em;font-weight:500;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.paper-link:hover{text-decoration-thickness:2px}
+@media(max-width:760px){.profile-cv-caption{font-size:12px;padding-top:5px}.profile-cv-link{padding:5px 0}}
+
+/* v4 CV link refinement */
+.profile-cv-note{display:block;margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+.profile-cv-note-label{display:none}
+.profile-cv-note-link{display:inline-flex;align-items:center;gap:10px;color:var(--teal);font-weight:600;text-decoration:none;border-bottom:0;padding-bottom:1px}
+.profile-cv-note-link:hover{opacity:.92}
+.profile-cv-note-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1.4px solid currentColor;border-radius:999px;flex:0 0 auto}
+.profile-cv-note-icon svg{width:18px;height:18px;display:block}
+@media(max-width:760px){.profile-cv-note{font-size:12px;margin-top:10px}.profile-cv-note-link{gap:8px}.profile-cv-note-icon{width:25px;height:25px}.profile-cv-note-icon svg{width:16px;height:16px}}
