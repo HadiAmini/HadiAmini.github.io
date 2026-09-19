@@ -1,14 +1,44 @@
+# Google Search crawling remains allowed. Indexing is decided by Google.
+# Known AI training / AI-search crawlers are requested not to crawl this site.
+# robots.txt is voluntary; it is not authentication or a technical access block.
+# Google-Extended does not opt out of AI features inside ordinary Google Search.
+# User-triggered fetchers may not apply robots.txt (notably ChatGPT-User).
+
 User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: Google-Extended
 Disallow: /
 
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+User-agent: Claude-User
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
+Disallow: /
+
 User-agent: CCBot
 Disallow: /
 
-User-agent: ClaudeBot
-Disallow: /
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
 
 User-agent: *
 Allow: /

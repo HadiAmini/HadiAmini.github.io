@@ -204,6 +204,21 @@
             const item = document.createElement('li');item.className = 'research-record';
             const year = document.createElement('span'); year.className = 'research-record-year';year.textContent = record.year;
             const citation = document.createElement('span');citation.className = 'research-record-citation';citation.append(citationFragment(record.citation));
+            // Only verified DOI destinations belong on paper links. A preprint DOI
+            // is visibly distinguished from a publisher DOI.
+            const doiUrl = record.doi || '';
+            const isPaper = ['Journal article', 'Conference/workshop paper', 'Book chapter'].includes(record.kind);
+            if (isPaper && Number(record.year) >= 2019 && /^https:\/\/doi\.org\/10\.\d{4,9}\/\S+$/i.test(doiUrl)) {
+              const paperLink = document.createElement('a');
+              paperLink.className = 'paper-link'; paperLink.href = doiUrl;
+              paperLink.target = '_blank'; paperLink.rel = 'noopener noreferrer';
+              paperLink.textContent = record.doiType === 'preprint' ? '(Preprint DOI)' : '(DOI)';
+              paperLink.dataset.doiType = record.doiType || 'publisher';
+              paperLink.title = `${record.linkType || 'Digital Object Identifier (DOI)'}: ${record.linkTitle || record.citation}`;
+              paperLink.setAttribute('aria-label', `${paperLink.title} (opens in a new tab)`);
+              citation.append(document.createTextNode(' '), paperLink);
+            }
+            if (record.paperId) item.dataset.paperId = record.paperId;
             item.append(year,citation);list.append(item);
           }
           details.append(list);content.append(details);
